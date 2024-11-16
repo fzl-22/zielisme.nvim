@@ -14,7 +14,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost init.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -43,7 +43,7 @@ return packer.startup(function(use)
 
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
-  use { "catppuccin/nvim", as = "catppuccin", config = function() require("configs.catppuccin") end } -- Catppuccin colorschemes
+  use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorschemes
 
   use "rstacruz/vim-closer" -- Automatic brackets closer
 
