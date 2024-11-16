@@ -51,9 +51,10 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- Buffer completions
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- Cmdline completions
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- Tabnine completions
   use "saadparwaiz1/cmp_luasnip" -- Snippet completions
   use "rstacruz/vim-closer" -- Automatic brackets closer
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- Tabnine completions
+  use { "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } } -- NPM completions in package.json 
 
   -- Snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
