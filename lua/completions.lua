@@ -13,11 +13,6 @@ if not tabnine_status_ok then
   return
 end
 
-local cmp_npm_status_ok, cmp_npm = pcall(require, "cmp_npm")
-if not cmp_npm_status_ok then
-  return
-end
-
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -52,11 +47,7 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "󰉺",
-  NPM = "",
 }
-
--- CMP NPM setup
-cmp_npm.setup({})
 
 -- CMP setup
 cmp.setup({
@@ -115,7 +106,7 @@ cmp.setup({
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        npm = "[NPM]",
+        nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -124,7 +115,7 @@ cmp.setup({
     end,
   },
   sources = {
-    { name = "npm" },
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
@@ -137,7 +128,7 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false,
   },
 })

@@ -38,11 +38,15 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer.nvim manage itself
-
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+  
   -- Colorschemes
   use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorschemes
 
@@ -51,10 +55,10 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- Buffer completions
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- Cmdline completions
+  use "hrsh7th/cmp-nvim-lsp" -- LSP completions
   use "saadparwaiz1/cmp_luasnip" -- Snippet completions
   use "rstacruz/vim-closer" -- Automatic brackets closer
   use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- Tabnine completions
-  use { "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } } -- NPM completions in package.json 
 
   -- Snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
