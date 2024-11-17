@@ -26,7 +26,7 @@ require("catppuccin").setup({
       }
     },
     treesitter = true,
-    ts_rainbow = true,
+    rainbow_delimiters = true,
     telescope = {
       enabled = true,
     },

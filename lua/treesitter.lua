@@ -35,6 +35,7 @@ local ensure_installed = {
   "nginx",
   "prisma",
   "python",
+  "query",
   "rust",
   "sql",
   "ssh_config",
@@ -60,9 +61,9 @@ treesitter_config.setup({
     disable = { "yaml" }
   },
   rainbow = {
-    enable = true,
+    enable = false,
     extended_mode = true,
     max_file_lines = nil,
-  }
+  },
 })
 
