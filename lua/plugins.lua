@@ -41,7 +41,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
-  -- NVIM Tree and Lualine
+  -- NVIM Structures
   use { "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.nvim_tree")  end } -- File explorer plugin
   use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.lualine") end }
   use { "nvimdev/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons", event = "VimEnter", config = function() require("configs.dashboard") end } -- Neovim dashboard with ASCII art
@@ -81,7 +81,8 @@ return packer.startup(function(use)
   use "hiphish/rainbow-delimiters.nvim"
 
   -- Utils
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', cmd = 'MarkdownPreview'} -- Markdown preview
+  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", cmd = "MarkdownPreview"} -- Markdown preview
+  use { "lewis6991/gitsigns.nvim", config = function() require("configs.gitsigns") end } -- Git sign support
 
   if PACKER_BOOTSTRAP then
     packer.sync()

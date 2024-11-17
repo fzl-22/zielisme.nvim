@@ -31,6 +31,8 @@ require("catppuccin").setup({
     telescope = {
       enabled = true,
     },
+    dashboard =  true,
+    gitsigns = true,
   }
 })
 
