@@ -2,6 +2,7 @@ local servers = {
   "clangd",
   "eslint",
   "lua_ls",
+  "marksman",
   "pyright",
   "rust_analyzer",
   "ts_ls",
@@ -106,6 +107,20 @@ lspconfig.lua_ls.setup({
   settings = {
     Lua = {}
   }
+})
+
+-- Markdown
+lspconfig.marksman.setup({
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+  end,
+  capabilities = capabilities,
 })
 
 -- Python
