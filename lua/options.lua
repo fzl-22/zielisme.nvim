@@ -59,3 +59,4 @@ end
 
 -- Append to shortmess
 vim.opt.shortmess:append("c")
+
