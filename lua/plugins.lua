@@ -45,6 +45,8 @@ return packer.startup(function(use)
   use { "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.nvim_tree")  end } -- File explorer plugin
   use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.lualine") end }
   use { "nvimdev/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons", event = "VimEnter", config = function() require("configs.dashboard") end } -- Neovim dashboard with ASCII art
+  use { "akinsho/bufferline.nvim", after = "catppuccin", config = function() require("configs.bufferline") end  }
+  use "moll/vim-bbye"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
