@@ -45,20 +45,27 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
+  -- Set autocommands conditional on server capabilities
   if client.server_capabilities.documentHighlight then
-    vim.api.nvim_exec(
-      [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-      false
-    )
+    -- Create an augroup for LSP document highlighting
+    local highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
+
+    -- Add CursorHold autocmd to highlight references
+    vim.api.nvim_create_autocmd("CursorHold", {
+      group = highlight_group,
+      buffer = 0, -- Current buffer
+      callback = vim.lsp.buf.document_highlight,
+    })
+
+    -- Add CursorMoved autocmd to clear references
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      group = highlight_group,
+      buffer = 0, -- Current buffer
+      callback = vim.lsp.buf.clear_references,
+    })
   end
 end
+
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
