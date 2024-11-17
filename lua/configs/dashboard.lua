@@ -1,6 +1,6 @@
 -- vim.g.dashboard_default_executive = 'telescope'
-local status_ok, dashboard = pcall(require, "dashboard")
-if not status_ok then
+local dashboard_ok, dashboard = pcall(require, "dashboard")
+if not dashboard_ok then
   return
 end
 

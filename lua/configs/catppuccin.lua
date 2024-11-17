@@ -1,4 +1,9 @@
-require("catppuccin").setup({
+local catppuccin_is_ok, catppuccin = pcall(require, "catppuccin")
+if not catppuccin_is_ok then
+  return
+end
+
+catppuccin.setup({
   flavour = "macchiato",
   default_integrations = true,
   integrations = {

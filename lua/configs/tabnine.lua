@@ -1,4 +1,9 @@
-require('tabnine').setup({
+local tabnine_is_ok, tabnine = pcall(require, "tabnine")
+if not tabnine_is_ok then
+  return
+end
+
+tabnine.setup({
   disable_auto_comment=true,
   accept_keymap="<Tab>",
   dismiss_keymap = "<C-]>",

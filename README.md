@@ -38,7 +38,7 @@ To install this configuration, you need to clone this repository to `$HOME/.conf
 git clone git@github.com:fzl-22/zielisme.nvim.git "$HOME/.config/nvim" && nvim
 ```
 
-Then, run `:PackerSync` to install all the plugins.
+Once the plugins are installed, restart Neovim to start using it.
 
 ## Attribution
 
