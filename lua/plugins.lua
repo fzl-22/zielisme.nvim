@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.lualine") end }
   use { "nvimdev/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons", event = "VimEnter", config = function() require("configs.dashboard") end } -- Neovim dashboard with ASCII art
   use { "akinsho/bufferline.nvim", after = "catppuccin", config = function() require("configs.bufferline") end  }
+  use { "akinsho/toggleterm.nvim", config = function() require("configs.toggleterm") end }
   use "moll/vim-bbye"
 
   -- LSP
