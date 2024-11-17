@@ -30,8 +30,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 20<cr>", opts)
-
 -- Resize with + and -
 -- Resize horizontally with Ctrl+(+) and Ctrl+(-)
 keymap("n", "<C-=>", ":vertical resize +2<CR>", opts) -- Increase width
@@ -93,4 +91,7 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", vim.tbl_extend("force"
 keymap("n", "<leader>ld", "<cmd>Telescope diagnostics<cr>", vim.tbl_extend("force", opts, { desc = "List diagnostics" })) -- 'ld' for LSP diagnostics
 -- Buffer-specific actions
 keymap("n", "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", vim.tbl_extend("force", opts, { desc = "Find in current buffer" })) -- 'fb' for find in buffer
+
+-- Nvimtree
+keymap("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", opts)
 

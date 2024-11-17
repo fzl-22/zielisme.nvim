@@ -41,6 +41,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
+  -- NVIM Tree and Lualine
+  use { "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.nvim_tree")  end } -- File explorer plugin
+  use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons", config = function() require("configs.lualine") end }
+
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer

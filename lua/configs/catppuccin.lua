@@ -4,6 +4,7 @@ require("catppuccin").setup({
   integrations = {
     cmp = true,
     markdown = true,
+    nvimtree = true,
     mason = true,
     native_lsp = {
       enabled = true,
