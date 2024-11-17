@@ -5,6 +5,9 @@ local term_opts = { silent = true }
 -- Shorted function name
 local keymap = vim.api.nvim_set_keymap
 
+-- Remap ; to : in normal mode
+keymap("n", ";", ":", { desc = "CMD enter command mode" })
+
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -81,3 +84,13 @@ vim.keymap.set("i", "<tab>", function()
     return "<tab>"
   end
 end, { expr = true })
+
+-- Telescope
+-- File-related actions
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts) -- 'ff' for find files
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", vim.tbl_extend("force", opts, { desc = "Search text in project" })) -- 'fg' for find grep (live search)
+-- Diagnostics and LSP
+keymap("n", "<leader>ld", "<cmd>Telescope diagnostics<cr>", vim.tbl_extend("force", opts, { desc = "List diagnostics" })) -- 'ld' for LSP diagnostics
+-- Buffer-specific actions
+keymap("n", "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", vim.tbl_extend("force", opts, { desc = "Find in current buffer" })) -- 'fb' for find in buffer
+

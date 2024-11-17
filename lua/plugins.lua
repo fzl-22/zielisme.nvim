@@ -64,6 +64,10 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim" -- fuzzy file, buffer, mru, etc
+  use "nvim-telescope/telescope-media-files.nvim" -- media support for Telescope
+
   -- Utils
   use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', cmd = 'MarkdownPreview'} -- Markdown preview
 
