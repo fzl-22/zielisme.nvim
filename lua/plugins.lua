@@ -68,6 +68,10 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim" -- fuzzy file, buffer, mru, etc
   use "nvim-telescope/telescope-media-files.nvim" -- media support for Telescope
 
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "p00f/nvim-ts-rainbow"
+
   -- Utils
   use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', cmd = 'MarkdownPreview'} -- Markdown preview
 
