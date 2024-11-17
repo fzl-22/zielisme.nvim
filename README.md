@@ -38,6 +38,8 @@ To install this configuration, you need to clone this repository to `$HOME/.conf
 git clone git@github.com:fzl-22/zielisme.nvim.git "$HOME/.config/nvim" && nvim
 ```
 
+Then, run `:PackerSync` to install all the plugins.
+
 ## Attribution
 
 This configuration is adapted from [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch) and draws significant inspiration from [NvChad/NvChad](https://github.com/NvChad/NvChad)
