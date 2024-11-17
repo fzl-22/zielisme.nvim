@@ -46,7 +46,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
-  
+
   -- Colorschemes
   use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorschemes
 
@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- Cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
   use "saadparwaiz1/cmp_luasnip" -- Snippet completions
-  use "rstacruz/vim-closer" -- Automatic brackets closer
+  use "windwp/nvim-autopairs" -- Autopairs completions
   use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- Tabnine completions
 
   -- Snippets
