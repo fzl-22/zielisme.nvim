@@ -7,14 +7,14 @@ local options = {
 
   -- Clipboard & Command Line
   clipboard = "unnamedplus",                -- Enable system clipboard
-  cmdheight = 2,                            -- More space for command-line messages
+  cmdheight = 1,                            -- More space for command-line messages
 
   -- UI Settings
   termguicolors = true,                     -- Enable GUI colors
   number = true,                            -- Show line numbers
   relativenumber = false,                   -- Disable relative line numbers
   cursorline = true,                        -- Highlight current line
-  showmode = true,                          -- Show mode
+  showmode = false,                          -- Show mode
   showtabline = 2,                          -- Always show tabline
   signcolumn = "yes",                       -- Always show sign column
   wrap = true,                              -- Enable line wrap
