@@ -69,11 +69,11 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim" -- fuzzy file, buffer, mru, etc
+  use { "nvim-telescope/telescope.nvim", config = function() require("configs.telescope") end } -- fuzzy file, buffer, mru, etc
   use "nvim-telescope/telescope-media-files.nvim" -- media support for Telescope
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("configs.treesitter") end }
   use "hiphish/rainbow-delimiters.nvim"
 
   -- Utils
