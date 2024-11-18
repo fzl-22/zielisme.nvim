@@ -19,7 +19,6 @@ local zielisme_header = {
   "",
 }
 
-
 local neovim_header = {
 	"",
 	"",
