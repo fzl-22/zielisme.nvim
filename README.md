@@ -14,13 +14,16 @@ Before installing this Neovim configuration, you need to do this following steps
 
 You must first install these dependencies using your favorite package manager:
 
-1. `nvim`, eg. `brew install neovim`, `sudo pacman -S neovim`, etc.
-2. `rust-analyzer`(optional)
-3. `black`, eg. `brew install black`
-4. `vscode-langservers-extracted`, eg. `npm install -g vscode-langservers-extracted` (optional)
-5. `marksman`, eg. `brew install marksman` (optional)
-6. `typescript`, eg. `npm install -g typescript` (optional)
-7. `typescript-language-server`, eg. `npm install -g typescript-language-server`(optional)
+1. `neovim`, e.g. `brew install neovim`, `sudo pacman -S neovim`, and etc.
+2. Any patched font such as MesloLG Nerd Font (used in the screenshot), JetBrainsMono Nerd Font, and etc.
+
+Moreover, you can install these dependencies in order for specific language server and/or formatter to work properly.
+
+1. Rust: `rust-analyzer`(optional).
+2. Python: `black`, e.g. `brew install black`.
+3. Eslint: `vscode-langservers-extracted`, e.g. `npm install -g vscode-langservers-extracted` (optional).
+4. Markdown: `marksman`, e.g. `brew install marksman` (optional).
+5. JavaScript & TypeScript: `typescript` and `typescript-language-server`, e.g. `npm install -g typescript typescript-language-server` (optional). It also supports `jsx` and `tsx`.
 
 ### Backup previous configuration
 
