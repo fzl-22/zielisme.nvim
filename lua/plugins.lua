@@ -81,7 +81,7 @@ return packer.startup(function(use)
   use "hiphish/rainbow-delimiters.nvim"
 
   -- Utils
-  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", cmd = "MarkdownPreview"} -- Markdown preview
+  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install" } -- Markdown preview
   use "lewis6991/gitsigns.nvim" -- Git sign support
 
   if PACKER_BOOTSTRAP then
