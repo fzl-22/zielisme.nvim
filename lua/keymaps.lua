@@ -88,9 +88,13 @@ end, { expr = true })
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts) -- 'ff' for find files
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", vim.tbl_extend("force", opts, { desc = "Search text in project" })) -- 'fg' for find grep (live search)
 -- Diagnostics and LSP
-keymap("n", "<leader>ld", "<cmd>Telescope diagnostics<cr>", vim.tbl_extend("force", opts, { desc = "List diagnostics" })) -- 'ld' for LSP diagnostics
--- Buffer-specific actions
 keymap("n", "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", vim.tbl_extend("force", opts, { desc = "Find in current buffer" })) -- 'fb' for find in buffer
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ld",
+  "<cmd>lua require'telescope.builtin'.diagnostics(require('telescope.themes').get_ivy({ layout_config = { height = 0.3, results_width = 1 }, previewer = false }))<CR>",
+  vim.tbl_extend("force", opts, { desc = "List diagnostics (bottom layout)" })
+)
 
 -- Nvimtree
 keymap("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", opts)
