@@ -1,6 +1,7 @@
 local servers = {
   "clangd",
   "eslint",
+  "gopls",
   "lua_ls",
   "marksman",
   "pyright",
@@ -69,6 +70,20 @@ lspconfig.eslint.setup({
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
       command = "EslintFixAll",
+    })
+  end,
+  capabilities = capabilities,
+})
+
+-- Go
+lspconfig.gopls.setup({
+  on_attach = function (client, bufnr)
+    on_attach(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end
     })
   end,
   capabilities = capabilities,
