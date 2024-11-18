@@ -25,6 +25,8 @@ Moreover, you can install these dependencies in order for specific language serv
 4. Markdown: `marksman`, e.g. `brew install marksman` (optional).
 5. JavaScript & TypeScript: `typescript` and `typescript-language-server`, e.g. `npm install -g typescript typescript-language-server` (optional). It also supports `jsx` and `tsx`.
 
+6. Go: `gopls`, e.g. `go install golang.org/x/tools/gopls@latest`
+
 ### Backup previous configuration
 
 If you have previous Neovim configuration, it's recommended to back it up unless you don't want it to.
