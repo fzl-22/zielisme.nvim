@@ -47,6 +47,13 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+vim.cmd([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+]])
+
 -- Configuration for each languages
 
 -- C, C++, etc
@@ -122,7 +129,7 @@ lspconfig.lua_ls.setup({
   settings = {
     Lua = {}
   }
-})
+    })
 
 -- Markdown
 lspconfig.marksman.setup({
