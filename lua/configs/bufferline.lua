@@ -59,12 +59,14 @@ bufferline.setup({
 		--     return true
 		--   end
 		-- end,
-		offsets = { 
-      {
-        filetype = "NvimTree",
-        text = "File Explorer",
-      },
-    },
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+        text_align = "left",
+        separator = true,
+			},
+		},
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
 		show_close_icon = true,
