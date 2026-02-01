@@ -66,7 +66,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
   use "saadparwaiz1/cmp_luasnip" -- Snippet completions
   use "windwp/nvim-autopairs" -- Autopairs completions
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- Tabnine completions
 
   -- Snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
