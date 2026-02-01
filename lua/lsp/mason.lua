@@ -54,10 +54,20 @@ augroup FormatAutogroup
 augroup END
 ]])
 
+local function setup_server(server_name, config)
+  if config.enabled == false then
+    return
+  end
+
+  vim.lsp.config(server_name, config)
+  vim.lsp.enable(server_name)
+end
+
 -- Configuration for each languages
 
 -- C, C++, etc
-lspconfig.clangd.setup({
+setup_server("clangd", {
+  enabled = true,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -71,7 +81,8 @@ lspconfig.clangd.setup({
 })
 
 -- Eslint
-lspconfig.eslint.setup({
+setup_server("eslint", {
+  enabled = false,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -83,7 +94,8 @@ lspconfig.eslint.setup({
 })
 
 -- Go
-lspconfig.gopls.setup({
+setup_server("gopls", {
+  enabled = false,
   on_attach = function (client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -97,7 +109,8 @@ lspconfig.gopls.setup({
 })
 
 -- Lua
-lspconfig.lua_ls.setup({
+setup_server("lua_ls", {
+  enabled = true,
   on_init = function(client)
     if client.workspace_folders then
       local path = client.workspace_folders[1].name
@@ -129,10 +142,11 @@ lspconfig.lua_ls.setup({
   settings = {
     Lua = {}
   }
-    })
+})
 
 -- Markdown
-lspconfig.marksman.setup({
+setup_server("marksman", {
+  enabled = true,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -146,7 +160,8 @@ lspconfig.marksman.setup({
 })
 
 -- Python
-lspconfig.pyright.setup({
+setup_server("pyright", {
+  enabled = false,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -160,7 +175,8 @@ lspconfig.pyright.setup({
 })
 
 -- Rust
-lspconfig.rust_analyzer.setup({
+setup_server("rust_analyzer", {
+  enabled = false,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -181,7 +197,8 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- TypeScript
-lspconfig.ts_ls.setup({
+setup_server("ts_ls", {
+  enabled = false,
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = require("lspconfig.util").root_pattern("tsconfig.json", "package.json", ".git"),
