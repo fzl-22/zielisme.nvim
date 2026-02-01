@@ -45,7 +45,15 @@ return packer.startup(function(use)
   use { "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" } -- File explorer plugin
   use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons" }
   use { "nvimdev/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons", event = "VimEnter" } -- Neovim dashboard with ASCII art
-  use { "akinsho/bufferline.nvim", requires = "nvim-tree/nvim-web-devicons" }
+  use { "akinsho/bufferline.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    after = "catppuccin",
+    config = function()
+      require("bufferline").setup {
+        highlights = require("catppuccin.special.bufferline").get_theme()
+      }
+    end
+  }
   use "akinsho/toggleterm.nvim"
   use "moll/vim-bbye"
 
