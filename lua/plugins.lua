@@ -44,7 +44,7 @@ return packer.startup(function(use)
   -- NVIM Structures
   use { "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" } -- File explorer plugin
   use { "nvim-lualine/lualine.nvim", requires = "nvim-tree/nvim-web-devicons" }
-  use { "nvimdev/dashboard-nvim", requires = "nvim-tree/nvim-web-devicons", event = "VimEnter" } -- Neovim dashboard with ASCII art
+  use { 'goolord/alpha-nvim' }
   use { "akinsho/bufferline.nvim",
     requires = "nvim-tree/nvim-web-devicons",
     after = "catppuccin",
@@ -81,8 +81,19 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim" -- fuzzy file, buffer, mru, etc
-  use "nvim-telescope/telescope-media-files.nvim" -- media support for Telescope
-
+  use {
+    'nvim-telescope/telescope-project.nvim',
+    requires = {
+      'nvim-telescope/telescope.nvim',
+    },
+  }
+  use {
+    "nvim-telescope/telescope-media-files.nvim",
+    requires = {
+      'nvim-telescope/telescope.nvim',
+    },
+  }
+  
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = function() require("nvim-treesitter.install").update({ with_sync = true }) end }
   use "hiphish/rainbow-delimiters.nvim"

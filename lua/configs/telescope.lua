@@ -3,8 +3,6 @@ if not telescope_ok then
   return
 end
 
-telescope.load_extension("media_files")
-
 local actions = require("telescope.actions")
 
 telescope.setup({
@@ -80,26 +78,23 @@ telescope.setup({
       },
     },
   },
-  -- pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  -- },
   extensions = {
     media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
         filetypes = {"png", "webp", "jpg", "jpeg"},
         find_cmd = "rg" -- find command (defaults to `fd`)
-      }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+      },
+    project = {
+      base_dirs = {
+        '~/Projects',
+      },
+      ignore_missing_dirs = true, -- default: false
+      order_by = "asc",
+      search_by = "title",
+      hidden_files = true,
+      sync_with_nvim_tree = true, -- default false
+    },
   },
 })
+
+telescope.load_extension("media_files")
+telescope.load_extension("project")

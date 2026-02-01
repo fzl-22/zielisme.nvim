@@ -36,7 +36,7 @@ catppuccin.setup({
     telescope = {
       enabled = true,
     },
-    dashboard =  true,
+    alpha = true,
     gitsigns = true,
   }
 })
